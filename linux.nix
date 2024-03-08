@@ -7,9 +7,11 @@
   time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  environment.systemPackages = with pkgs; [
-    mcrcon
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      mcrcon
+    ];
+  };
 
   programs.git = {
     enable = true;

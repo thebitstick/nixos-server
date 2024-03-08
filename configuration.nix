@@ -45,7 +45,9 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+  };
   nix = {
     gc = {
       automatic = true;
