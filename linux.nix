@@ -7,6 +7,10 @@
   time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
 
+  environment.systemPackages = with pkgs; [
+    mcrcon
+  ];
+
   programs.git = {
     enable = true;
   };
@@ -50,6 +54,21 @@
           enableACME = true;
           globalRedirect = "huicochea.moe";
         };
+      };
+    };
+    minecraft-server = {
+      enable = true;
+      eula = true;
+      openFirewall = true;
+      declarative = true;
+      serverProperties = {
+        server-port = 25565;
+	gamemode = "survival";
+	motd = "\\u00a7l\\u00a7o\\u00a7nDeclarative Server\\u00a7r\\u00a7l\\u00a7n powered by NixOS";
+	max-players = 5;
+	level-seed = "nixos";
+	enable-rcon = true;
+	"rcon.password" = "nixos";
       };
     };
     openssh = {
