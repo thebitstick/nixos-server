@@ -18,6 +18,10 @@
       $env.EDITOR = "nvim"
       $env.VISUAL = "zed"
 
+      def clean [] {
+          nix-collect-garbage -d
+      }
+
       def gc [url] {
           cd ~/Developer/Git
           git clone $url
