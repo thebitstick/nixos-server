@@ -27,6 +27,7 @@
   environment = {
     systemPackages = with pkgs; [
       # Terminal Utilities
+      btop
       inetutils
       neovim
       nmap
